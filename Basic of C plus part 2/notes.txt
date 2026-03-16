@@ -1,0 +1,12 @@
+Now std which we use with std::cout is known as Standard output Stream. In programming Stream represents a sequesnce of characters and Standard output is our console window. so using cout we can write sequesnce of characters in our Standard output which is console window.
+
+In std::cout the double less than "<<" is known as Stream Insertion operator. Its an operator for inserting something to our output stream.
+We can chain the outputs with different values by using less than sign multiple times.
+for ex:-int a = 6;
+        int b = 7;
+        std::cout << a << b; Here we will get result as 67;
+
+we use std::endl to insert new line after one output.
+
+We use cin to get the input from the user through console. First we need to declare a variable to store the input got from the user.
+we use double greater than sign ">>" which is known as stream extraction operator. and double less than "<<" is stream Insertion operator used to print the stream of characters.

@@ -1,0 +1,16 @@
+variables = we use variables to temperary store data in the memory.
+we have to always initialize a variable with a value otherwise it will be a garbage value.
+Other than normal variables we also have constants, these are those whos values we cannot change after initializing it. for ex value of PI = 3.14
+To make a constant variable just add a const keyword at the start of a variable like this = const double PI = 3.14;
+
+We can do mathematical operations in c++ like adition, subtraction, multiplication, division etc.
+ex :- int a = 4;
+int b = 8;
+int c = a + b; // here a and b are operands and "+" sign is operator;
+the operator modulo (%) returns the remainder of a division for ex:- when we divide 10 by 3 we get a remainder 1 and modulo returns that.Means it returns the last known value after division before we move to floating point numbers.
+
+when we use incriment operator or decriment operator then it increase and decreases the value of a variable by 1. syntex is x++; for a variable x. when we put "++" after variable name like this x++ then value gets incrimented later and value gets initialize first but if we put before variable name like this ++x then value gets incrimented first then value gets initialize.
+example = int x = 10; // here value is 10
+          int y = x++; // here value of x is 11 and value of y is 10; here value of x first gets assigned to y then gets increase by 1.
+          int z = ++x; // here value of both x and z is 11; Here when code gets evaluated then the value of x gets increase by 1 then assigned to z.
+In maths the multiplication and division has high priority order than adition and subtraction but if we wrap equations inside parenthesis "(a+b) * c" then the value inside parenthesis gets evaluated first then the rest equation.

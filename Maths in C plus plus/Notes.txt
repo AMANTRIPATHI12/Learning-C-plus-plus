@@ -1,0 +1,8 @@
+we can use the cmath library to perform the math operations in our code just include it and use it.
+
+we write comments in our code to explain things in our code to make our code more understandable for other programmers.
+comments don't get compiled with the code they get ignored by the compilers, they are there for our understanding of the code.
+
+we can use "//" to write a single line comment. Just add two forward slashes "//" any where in the code and write anything after it, that will become a comment.
+
+we can also write a multiline comment using this = /* what ever you write between these "/* - */" will be considered as comments */

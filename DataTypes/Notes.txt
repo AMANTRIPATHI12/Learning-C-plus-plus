@@ -1,0 +1,12 @@
+In c++ to declare a variable we need to specify its type and we cannot change its type throughout its lifetime.
+So we can say c++ is satatically typed language. Other examples are C# , java.
+In contrast to satatically typed language we have dynamically typed language which means there types can be changed at any point of time and we do not need to declare there type (int , double). dynamically typed languages are python, javascript, ruby.
+In dynamically typed language there type depends on the value that has been initialized to the variable which can be changed at any time.
+In c++ #include is a preprocessor directive which tells the compiler to include contents of another file before the program gets compiled. its usually the header file.
+when using float we have to put either a lower case "f" or a upper case "F" to let the compiler know that its a float other wise by default compiler will treat float as a double. Same goes for "long" datatype variables we have to put an "L" after initializing a variable. Here only use capital "L" as compiler can get confuse with lower case "l" for something else.
+for ex:- long fileSize = 123L
+we can use a "auto" keyword to inplace of regular fundamental data types and it will make the variable dynamically typed means datatype will be set based on the value a variable holds.
+we can use "brace intializers" to strictly intialize a variable. Means for a int datatype variable if we mistakenly wrote a floating point number then the program will get compiled but when will print it, it will only print the integer part and if we leave a variable empty then it will have garbage value. so to deal with this we can use "brace intializers" it will store "0" if variable is empty by default and it will not allow to compile the code if we mistakenly wrote a float instead of int.
+example of this :- int num1 {2}; // this is correct and will get compiled.
+                   int num2 {}; // this is also correct.
+                   int num3 {2.2};//this is wrong program will not compile.

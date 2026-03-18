@@ -1,0 +1,50 @@
+A function is a named block of code that performs specific tasks. You can call it whenever you need a perticular task to be done.
+Think of it as a robot which makes coffie for you, you only need to give the recipie and ingredients once to it then it can make coffie for you as much you want.
+Its basic syntex is :- its_return_type function_name(parameters / you can leave it empty also.){
+    // body
+    return value; // don't need if using void. But you can.
+}
+
+Return Type :- the type of data a function sends back.
+function_name = its the name of function through which you will call it.
+parameters = these are list of variables which gets sent when while calling a function. It can be empty also.
+body = where the function's code exists.
+
+ex:- void Hello() {
+    cout << "Hellooo, its me...";
+}
+
+ex 2 :- int add(int num1 , num2){
+    return num1 + num2;
+}
+
+pass by value means when you give a variable as parameter to a function then it gets copied and put in place of the parameter which the function actully has.
+For example in the main function you define two variables "a" , "b" with there values and then pass them in the add function to get their sum then the values of those "a" and "b" gets copied and the parameters "num1" and "num2" get those values and because of this if you change the values in the add function then it will not affect the values of variables inside main function.
+
+Pass by reference means you pass the reference pointer of the orignal variable means you don't give the value you pass the current address of the value in the memory and because of it the add function can directly change the orignal value of orignal variable.
+You use "&" with variable name rest is same.
+ex :- double increase(int &num1){
+    // code to write.
+}
+
+function overloading:- C++ allows function with same name but different parameter and return type. This is known as function overloading. The compiler itself decides which function needs to run based on the values provided as parameter.
+example :- 
+            int max(int a, int b) {
+                return (a > b) ? a : b;
+            }
+
+            double max(double a, double b) {
+                return (a > b) ? a : b;
+            }
+
+            int main() {
+                cout << max(3, 7) << endl;      // calls the int version
+                cout << max(2.5, 1.8) << endl;  // calls the double version
+            }
+
+Scope of variables
+    variables declared inside a function are local and they can only be accessed inside that perticular block of code.
+    variables declared outside a block usually at the top before main function or after iostream or before it is considered a global variable. They can be accessed anywhere in the code. But global variables might lead to messy code so use it effectivly.
+
+Why use function :- Suppose you want to print the area of a circle for 100 different radius value then you need to write the same code again and again 100 times. But with a function you can write the code once and you can call it 100 times. and also Suppose you want to change something in the code of area of circle then you can change it once and it will reflect for all 100 radius. but if you don't use the function then you have to change for all 100 radius which is not efficient.
+

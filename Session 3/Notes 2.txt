@@ -1,0 +1,24 @@
+Array supports arrays of arrays (multidimentional array). for ex a 2D array (like a matrix)
+int matrix[3][4] = {
+    {1,2,3,4},
+    {5,6,7,8},
+    {9,10,11,12}
+};
+Three horizontal rows and Four vertical columns.
+
+To access the value you need to write both row and column to access the exact element. ex :- matrix[1][2] this is equal to 7. Here also counting starts with zero so th first row's index is 0, seconds = 1 and thrid is 2. same goes for columns.
+
+You can make matrix of higher dimentions like 3D but they are less common.
+
+we also have a c-style string which is basically array of characeters terminated by a '\0' at the end. Meaning:-
+char arr[] = "Jade"; is equals to char arr[5] = {'j','a','d','e','\0'}.
+in mordern c++ we use std::string instead of this.
+
+C++ doesn't do any built in bounds checking of array so don't go out of bounds it can crash or corrupt data.
+use std::array or std::vector for safer alternatives.
+
+arrays cannot be assigned directly to another array int arr2[] = arr1; you need to copy element by element.
+arrays size must be constant at compile time unless using dynamic allocation using new. for variable size use vector instead.
+
+if you have a fixed size then use std::array.
+if you have a variable size array then use std::vector. 

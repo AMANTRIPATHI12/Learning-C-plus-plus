@@ -1,0 +1,52 @@
+Array = An array is a collection of same type of values stored in contegous memory locations. They can be anywhere in the memory but together one after the other. Think of them as lockers in schools placed at a perticular location in schools but next to eachother in a contegous fashion. where each locker is holding some value and each of them has their number (index).
+why we need array ?
+    Suppose you have to store the marks of students of section 12 and without array you need to create so many variables practically 70 to 80 variables and each variable name should be uniqe which is practically not possible as anyone cannot think of 70 to 80 uniqe names and this is only for one section you have to do this for other sections also. which is practically not possible. But using array you can store those 70 to 80 variables under a single variable name which you could call section 12.
+Declaring an Array
+    syntex : type ArrayName[ArraySize];
+    type = it is the data type of all the numbers stored.
+    ArrayName = it is a valid identifier 
+    ArraySize = Its a constant number which fixes the total number of variable/ toal values an array can store.
+    int score[5];
+Initializing an array :- you can Initialize an array at the time of decleration.
+    int score[5] = {1,2,4,5,7};
+if you only give few elements than specified size then the remaining elements will become zero.
+    int score[5] = {1,5}; // {1,5,0,0,0}
+you don't need to write the size of array if you Initialize the array at the time of decleration. The compiler will automatically deduce the size during runtime.
+    int score[] = {1,4,6,3,6};
+you can create an empty array without specifying the size and try to access an element then you will get garbage value in return but if you specify the size of the array and don't Initialize it with values then you will get zero when you will try to access the elements. If you try to access the array more than the specified size then you will get garbage value in return.
+
+Array indeces start at 0. So first element at 0 and last element is at (ArraySize - 1).
+you can access an element or assign a value in the given array with the help of index.
+
+You can loop through arrays using loops for while.
+for ex:- for(int i = 0; i < 5; i++){
+    cout<< score[i] << endl;
+}
+This prints all scores in one go.
+
+you can also use a range based for loop.
+int scores[] = {1,2,3,4,5,6,7};
+for(int score : scores){
+    cout << score << " ";
+}
+
+here score is a new variable which has all values of scores and scores is an array.
+
+now while passing array to a function we also have to pass the array size as a parameter because when you assign an array as a parameter in the function then that array is considered as a pointer which points to the orignal array and and if you do sizeof(arr) then it will return the size of pointer not array. so that is why you also pass the size of array to the function as parameter.
+
+ex :- #include <iostream>
+
+using namespace std;
+
+void arrayTest(int arr[] , int size){
+    arr[3] = 67;
+}
+
+int main() {
+    cout << "Hello multiverse"<<endl;
+    int score[] = {1,2,3,4,5,6};
+    cout << "Before " << score[3] << endl;
+
+    arrayTest(score , sizeof(score));
+    cout << "After " << score[3] << endl;
+}

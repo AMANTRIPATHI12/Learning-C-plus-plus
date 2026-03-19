@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int max(int arr[], int size){
+int max(const int arr[], int size){
     int max = arr[0];
     for(int i = 0; i < size; i++){
         if(arr[i] > max){
@@ -17,7 +17,7 @@ int main() {
     int arr[5];
 
     cout << "Enter 5 numbers for the array" << endl;
-    for(int i = 0; i < 5; i++){
+    for(int i = 1; i < 5; i++){
         cin >> arr[i];
     }
 

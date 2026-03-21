@@ -1,0 +1,246 @@
+move to next but first here is the answers :- #include <iostream>
+#include <string>
+
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+
+class BankAccount{
+    private:
+        string accountNumber;
+        double balance;
+
+    public:
+        BankAccount (string accNum, double bal){
+            accountNumber = accNum;
+            balance = bal;
+        }
+        // Getters
+        string getName()const{
+            return accountNumber;
+        }
+
+        double getMarks()const{
+            return balance;
+        }
+
+        void deposit(double amount){
+            if(amount > 0){
+                balance += amount;
+            }
+        }
+
+        void withdraw(double amount){
+            if(amount > 0 && amount <= balance){
+                balance -= amount;
+            }
+        }
+
+        // display
+        void display()const{
+            cout << "sufficient balance : " << balance << endl;
+        }
+};
+
+int main(){
+    cout << "Hello multiverse" << endl;
+    BankAccount b1("420",500);
+    BankAccount b2("67",1000);
+    BankAccount b3("41",2000);
+
+    b1.deposit(500);
+    b1.display();
+    b2.withdraw(500);
+    b2.display();
+}  #include <iostream>
+#include <string>
+
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::swap;
+
+class Student{
+    private:
+        string name;
+        int roll_number;
+        double marks;
+
+    public:
+        Student(string n, int r, double m){
+            name = n;
+            roll_number = r;
+            marks = m;
+        }
+        // Getters
+        string getName()const{
+            return name;
+        }
+
+        int getRollNumber()const{
+            return roll_number;
+        }
+
+        double getMarks()const{
+            return marks;
+        }
+        // display
+        void display()const{
+            cout << "Roll no : " << roll_number << ", Name : " << name << ", Marks : " << marks << endl;
+        }
+};
+
+// function to find topper (using array of objects)
+int findTopper(Student students[], int size){
+    int topperIndex = 0;
+    for(int i = 0; i < size; i++){
+        if(students[i].getMarks() > students[topperIndex].getMarks()){
+            topperIndex = i;
+        }
+    }
+    return topperIndex;
+}
+
+int main(){
+    cout << "Hello multiverse" << endl;
+    Student s1("Amar",101,95.2);
+    Student s2("Akhbar",102,96.2);
+    Student s3("Anthany",103,97.2);
+
+    Student batch[] = {s1,s2,s3};
+    int size = sizeof(batch) / sizeof(batch[0]);
+    int top = findTopper(batch , size);
+    cout << "Topper : ";
+    batch[top].display();
+    for(int i = 0; i < size - 1; i++){
+        for(int j = i + 1; j < size; j++){
+            if(batch[i].getMarks() < batch[j].getMarks()){
+                swap(batch[i],batch[j]);
+            }
+        }
+        
+    }
+
+    cout << "New sorted list" << endl;
+
+    for(int i = 0; i < size; i++){
+        batch[i].display();
+    }
+} #include <iostream>
+
+using std::cout;
+using std::cin;
+using std::endl;
+
+// private data members length and width cannot be accessed directly from the main class(rect.length would cause error). This is encapsulation
+// The constructor Rectangle(double l, double w) initializeses the object. It has the same name as class and no return type.
+// public member fuctions provide the interface to interact with the object.
+// Getters and setters allow controlled access to the data.
+
+class Rectangle{
+    private:
+        double length;
+        double width;
+    public:
+        // This is a constructor which gets called when a object gets created.
+        Rectangle(double l,double w){
+            length = l;
+            width = w;
+        }
+
+        // Member fuctions
+        double area(){
+            return length * width;
+        }
+
+        double perimeter() {
+            return 2 * (length + width);
+        }
+
+        // Setter (mutator)
+        void setLength(double l){
+            if(l <= 0){
+                cout << "Enter value greater than 0" << endl;
+            }
+            else{
+                length = l;
+            }
+        }
+        
+        // getter (accesser)
+        double getLength(){
+            return length;
+        }
+};
+
+int main(){
+    cout << "Hello Multiverse" << endl;
+    double l;
+    double w;
+    cout << "Enter Length and width of rectangle :- ";
+    cin >> l >> w;
+    if(l <=0 & w <= 0){
+        cout << "Enter value greater than 0" << endl;
+    }
+    else{
+        Rectangle rect(l,w); // object creation
+        cout << "Area : " << rect.area() << endl;
+        cout << "Perimeter : " << rect.perimeter() << endl;
+        rect.setLength(7.0);
+        cout << "current Length : " << rect.getLength();
+    }
+} and Node class :- #include <iostream>
+
+using std::cout;
+using std::cin;
+using std::endl;
+
+class Node{
+    public:
+        int data;
+        Node* next;
+        Node(int data){
+            this -> data = data;
+            next = nullptr;
+        }
+};
+
+int main(){
+    cout << "Hello multiverse" << endl;
+    Node n1(67);
+    Node n2(41);
+    Node next = n2;
+    Node n3(69);
+    Node next = n3;
+    
+} I created the Node class and i am not able to think after this right now :- #include <iostream>
+
+using std::cout;
+using std::cin;
+using std::endl;
+
+class Node{
+    public:
+        int data;
+        Node* next;
+        Node(int data){
+            this -> data = data;
+            next = nullptr;
+        }
+};
+
+int main(){
+    cout << "Hello multiverse" << endl;
+    Node n1(67);
+    Node n2(41);
+    n1.next = &n2;
+    Node n3(69);
+    n2.next = &n3;
+    Node temp = n1;
+    while (temp.next != nullptr){
+        cout << temp.data << endl;
+        temp.next;
+    }
+}

@@ -1,0 +1,8 @@
+Dynamic Memory, Copy Control, and Linked Lists
+
+1. Why Dynamic Memory for Linked Lists?
+A linked list consists of nodes connected by pointers. Each node must exist independently of scope,so we allocate them on the heap using new. The list owns these nodes and is responsible for deallocating them with delete.
+Node* newNode = new Node(value);   // node lives until delete
+If we used automatic variables (stack) , they'd be destroyed when the function returns, breaking the list. So dynamic allocation is essential.
+
+2. The Rule of Three (and Five)

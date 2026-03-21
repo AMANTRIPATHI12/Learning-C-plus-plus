@@ -1,0 +1,62 @@
+Pointer = It is a variable that stores the memory address of a variable. Instead of storing a value like normal variable does pointer stores where you can find that perticular variable. Think of it as a piece of paper which has your friends address written, now to go to you friends house you use that paper.
+
+why we need a pointer:
+    create variables at runtime.
+    using pointer you can pass large data in functions without copying it you can just point to the orignal variables address in the memory.
+    To build complex data structure (linked list, trees etc.)
+    To work with arrays more flexibally.
+    To impliment polymorphism in OOP.
+Syntex to declare a pointer
+type* pointerName;
+type is the data type the pointer points to.
+"*" indicates that its a pointer.
+The "*" can be placed next to the type (int* ptr) or next to the variable name (int *ptr) both are valid.
+To get the memory address where a variable is stored use & operator.
+int age = 25;
+int* ptr = &age; // now ptr holds the address of age.
+
+To access the value stored at the address held by the pointer, use "*" operator this is known as dereferncing operator.
+cout << *ptr; // This will print 25 as ptr holds the address of age and age is 25.
+here we used derefernce of ptr to get the value of age.
+we can change the value of age using dereferncing also.
+*ptr = 30; // now age became 30.
+
+In C++ the name of an array acts like a pointer to its first element.
+for ex:- int arr[4] = {1,2,3,4};
+int* ptr = arr; // now ptr points to arr[0], no & needed.
+*(ptr + i) == arr[i]
+ptr[i] is also same.
+*ptr = 1 // first element of arr.
+*(ptr + 2) = 3 // third element of arr.
+ptr[3] = 4 // first element of arr.
+Adding integer to a pointer moves it by that many elements, not bytes. so p+1 points to the next integer (typically 4 bites if int is 4 bytes).
+This is why pointer type matters.
+We already know pass by reference using &. Pointers can also be used to modify variables in the calling functions.
+A pointer that doesn't point to any valid memory location should set to nullptr (new way) or NULL (old way). derefernceing a null pointer crashes the program.
+int* p = nullptr;
+if(p != nullptr){
+    *p = 10;
+}
+Always initialize pointers and check for null before derefernceing.
+So till now all variables were created automatically (on the stack) and destroyed when they go out of scope. With pointers, we can allocate memory dynamically (on the heap) that persists untill we explicitaly deallocate it.
+new = allocates memory and returns a pointer to it.
+delete = frees the allocated memory by new.
+
+int* p = new int;
+*p = 10;
+cout << *p;
+delete p;
+p = nullptr;
+For arrays.
+int* arr = new int[10];
+arr[0] = 4;
+delete[] arr;
+arr = nullptr;
+Every new must be matched with a delete. Forgetting to delete causes memory leaks -the memory is never freed, and your program will consume more and more memory.
+
+Top common things you must do.
+Uninitialized pointers contain garbage address, derefernceing causes undefined behaviour. Always initialize.
+Dangling pointers- pointers points to memory that has been freed. derefernceing is dangereous. set it to nullptr after delete.
+
+memory leaks = Forgetting to delete.
+Buffer overflows - accessing beyond allocated memory(especially with arrays). Use bounds checking.

@@ -1,0 +1,72 @@
+Class = A class is a user-defined data type that groups together data members (variables) and member functions (functions) that operate on those members. it's like a blueprint for creating objects.
+Think of class as a blueprint for a house. The blueprint itself isn't a house but you can create many houses (objects) from it.
+why we use classes ?
+    Encapsulation = Bundle data and methods together, hide internal details.
+    Reusability = create multiple objects from the same class.
+    Abstraction = use objects without knowing how they work internaly.
+    Foundation of Data Structures = Linked list, trees and graphs are built using classes for ex node class.
+Defining a class:- class className{
+    access_specifier:
+        data members;
+        member functions;
+};
+access_specifier control who can access these members:
+    public = accessible from anywhere.
+    private = accessible only within the class (default if not specified).
+    protected = Like private but also accessible in derived classes.
+We have constructor which is a special function which gets called when a object is created.
+
+constructors = A constructor is a special type of member function which automatically gets called when an object is created. it has:
+    same name as class.
+    No return type (not even void);
+    Can be overloaded.
+If you don't define any constructor, the compiler provides a default constructor (with no paramter) which does nothing. But once you define any constructor the default one is not provided.
+Types of constructor
+    Default constructor = Rectangle() {length = 0, width = 0}
+    parameterized constructor = Rectangle(length = l, width = w)
+    Copy constructor = Rectangle(const Rectangle& other) (copies another object)
+Destructor = A Destructor is a special member function which gets called when an object gets destroyed(goes out of scope or is deleted). It is used to release resources (like dynamic memory). It has:-
+    same name as class preceded by " ~ " tilde sign.
+    No parameters, no return type.
+    Only one Destructor per class.
+class myArray{
+    private:
+        int* data;
+        int size;
+    public:
+        myArray(int s){
+            size = s;
+            data = new int[size];
+        }
+        ~myArray(){
+            delete[] data;
+        }
+}; 
+
+The "this" pointer
+Inside a member function, "this" is a pointer to the current object. It's useful when parameter names conflict with member names.
+void setLength(double length){
+    this->length = length ;
+}
+
+const member functions
+if a member function doesn't modify the object,you can declare it const. This allows it to be called on const objects.
+double area()const{
+    return length * width; // doesn't modify members
+}
+
+Static members
+Static data members are shared by all objects of the class. Static member functions can only access Static members.
+class counter{
+    private:
+        Static int count; //decleration
+    public:
+        counter(){
+            count++;
+        }
+        Static int getCount(){
+            return count;
+        }
+};
+you can declare a Static data member outside its class.
+int counter::count = 0;
